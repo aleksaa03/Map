@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+      type="text/css"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" href="media/map-icon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Map</title>
+  </head>
+  <body>
+    <div class="map" id="map"></div>
+    <div class="date">
+      <h6 id="week"></h6>
+      <h1 id="day"></h1>
+    </div>
+    <div class="details">
+      <div class="speed">
+        <h1 id="speed"></h1>
+        <h6>KM/h</h6>
+      </div>
+      <div class="vr"></div>
+      <div class="weather">
+        <h1 id="weather"></h1>
+        <h6>°C</h6>
+      </div>
+    </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

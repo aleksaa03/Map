@@ -1,0 +1,20 @@
+{
+    "short_name": "Map",
+    "name": "Map",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "icons": [
+    {
+      "src": "media/map-icon.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "media/map-icon.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+    ],
+    "start_url": "index.html"
+  }
