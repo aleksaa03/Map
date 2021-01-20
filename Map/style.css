@@ -23,15 +23,17 @@
   background: #ffffff;
   text-align: center;
 }
-.date h6 {
+.date h6,
+.date-connect h6 {
   margin: 1px 0;
   color: #ff000f;
 }
 .date h1,
-.details h1 {
+.details1 h1,
+.details2 h1 {
   font-weight: 500;
 }
-.details {
+.details1 {
   position: absolute;
   z-index: 2;
   height: 50px;
@@ -46,10 +48,26 @@
   justify-content: space-around;
   align-items: center;
 }
-.details .vr {
+.vr {
   height: 50px;
   width: 1px;
   background: #aaa;
+}
+.details2 {
+  position: absolute;
+  z-index: 2;
+  height: 50px;
+  width: 225px;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 5px;
+  background: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .mapboxgl-ctrl-pitchtoggle-3d {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+ICAgIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iLjM1ZW0iIHN0eWxlPSJmb250LXNpemU6IDE0cHg7IGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLEFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmOyBmb250LXdlaWdodDogYm9sZDsgdGV4dC1hbmNob3I6IG1pZGRsZTsiPjNEPC90ZXh0Pjwvc3ZnPg==);

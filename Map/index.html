@@ -9,28 +9,165 @@
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" href="media/map-icon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <title>Map</title>
+    <style>
+      .date h6,
+      .date-connect h6 {
+        margin: 1px 0;
+        color: #ff000f;
+      }
+      .date h1,
+      .details1 h1,
+      .details2 h1 {
+        font-weight: 500;
+      }
+      .details1 {
+        position: absolute;
+        z-index: 2;
+        height: 50px;
+        width: 150px;
+        left: 10px;
+        bottom: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        background: #ffffff;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .vr {
+        height: 50px;
+        width: 1px;
+        background: #aaa;
+      }
+      .details2 {
+        position: absolute;
+        z-index: 2;
+        height: 50px;
+        width: 225px;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        padding: 5px;
+        background: #ffffff;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #settings {
+        font-size: 29px;
+        position: absolute;
+        top: 135px;
+        right: 0;
+        margin: 10px 10px 0 0;
+        color: #707070;
+        cursor: pointer;
+      }
+      .settings {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        z-index: 3;
+        display: none;
+      }
+      .settings .setting {
+        height: 300px;
+        width: 300px;
+        background: #ffffff;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5px;
+      }
+      .settings .setting i {
+        font-size: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .settings .setting .split,
+      .setting .connect {
+        margin: 15px;
+      }
+      .settings .setting span {
+        margin: 10px;
+      }
+      .settings .setting input[type="radio"] {
+        cursor: pointer;
+      }
+      .settings .setting img {
+        height: 100px;
+        width: 250px;
+        display: block;
+        margin: auto;
+      }
+    </style>
   </head>
   <body>
-    <div class="map" id="map"></div>
-    <div class="date">
-      <h6 id="week"></h6>
-      <h1 id="day"></h1>
+    <div class="settings" id="settingsDiv">
+      <div class="setting">
+        <i class="fas fa-times" onclick="settings('close')"></i>
+        <div class="split">
+          <span>Splited</span>
+          <input type="radio" name="radio" id="" class="radio" />
+          <img src="media/design1.svg" alt="" />
+        </div>
+        <div class="connect">
+          <span>Connected</span>
+          <input type="radio" name="radio" id="" class="radio" />
+          <img src="media/design2.svg" alt="" />
+        </div>
+      </div>
     </div>
-    <div class="details">
-      <div class="speed">
-        <h1 id="speed"></h1>
+    <div class="map" id="map"></div>
+    <div class="date" id="date">
+      <h6 class="week"></h6>
+      <h1 class="day"></h1>
+    </div>
+    <div class="details1" id="split">
+      <div class="speed-container">
+        <h1 class="speed"></h1>
         <h6>KM/h</h6>
       </div>
       <div class="vr"></div>
-      <div class="weather">
-        <h1 id="weather"></h1>
+      <div class="weather-container">
+        <h1 class="weather"></h1>
         <h6>°C</h6>
       </div>
     </div>
+    <div class="details2" id="connect">
+      <div class="speed-container">
+        <h1 class="speed"></h1>
+        <h6>KM/h</h6>
+      </div>
+      <div class="vr"></div>
+      <div class="weather-container">
+        <h1 class="weather"></h1>
+        <h6>°C</h6>
+      </div>
+      <div class="vr"></div>
+      <div class="date-connect">
+        <h6 class="week"></h6>
+        <h1 class="day"></h1>
+      </div>
+    </div>
+    <i class="fas fa-cog" id="settings" onclick="settings('open')"></i>
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <script src="app.js"></script>

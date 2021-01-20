@@ -128,13 +128,15 @@ function map(lat, log) {
   }
 }
 
-var speedOutput = document.getElementById("speed");
-var weatherOutput = document.getElementById("weather");
+var speedOutput = document.querySelectorAll(".speed");
+var weatherOutput = document.querySelectorAll(".weather");
 
 function details() {
   navigator.geolocation.watchPosition((data) => {
     var apiKey = "2b6b6d69f68b80375d0a535e5e7f6ffb";
-    speedOutput.innerHTML = Math.floor(data.coords.speed * 3.6);
+    for (var i = 0; i < speedOutput.length; i++) {
+      speedOutput[i].innerHTML = Math.floor(data.coords.speed * 3.6);
+    }
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${data.coords.latitude}&lon=${data.coords.longitude}&appid=${apiKey}`
     )
@@ -147,11 +149,13 @@ details();
 
 function weather(data) {
   var temp = data.main.temp;
-  weatherOutput.innerHTML = Math.floor(temp - 273.15);
+  for (var i = 0; i < weatherOutput.length; i++) {
+    weatherOutput[i].innerHTML = Math.floor(temp - 273.15);
+  }
 }
 
-var outputWeek = document.getElementById("week");
-var outputDay = document.getElementById("day");
+var outputWeek = document.querySelectorAll(".week");
+var outputDay = document.querySelectorAll(".day");
 
 function mapDate() {
   var day = date.getDate();
@@ -181,8 +185,59 @@ function mapDate() {
       break;
   }
 
-  outputWeek.innerHTML = week;
-  outputDay.innerHTML = day;
+  for (var i = 0; i < outputWeek.length; i++) {
+    outputWeek[i].innerHTML = week;
+    outputDay[i].innerHTML = day;
+  }
 }
 
 setInterval(mapDate);
+
+var settingsDiv = document.getElementById("settingsDiv");
+var radioButton = document.querySelectorAll(".radio");
+
+var dateDiv = document.getElementById("date");
+var split = document.getElementById("split");
+
+var connect = document.getElementById("connect");
+
+radioButton[0].checked = true;
+
+function settings(setting) {
+  if (setting == "open") {
+    settingsDiv.style.display = "block";
+  } else {
+    settingsDiv.style.display = "none";
+  }
+}
+
+setInterval(function () {
+  if (radioButton[0].checked) {
+    show(0);
+    localStorage.setItem("design", 0);
+  }
+  if (radioButton[1].checked) {
+    show(1);
+    localStorage.setItem("design", 1);
+  }
+});
+
+function show(num) {
+  if (num == 0) {
+    split.style.display = "flex";
+    dateDiv.style.display = "block";
+    connect.style.display = "none";
+  } else {
+    split.style.display = "none";
+    dateDiv.style.display = "none";
+    connect.style.display = "flex";
+  }
+}
+
+var savedDesign = JSON.parse(localStorage.getItem("design"));
+
+if (savedDesign != null) {
+  radioButton[savedDesign].checked = true;
+} else {
+  radioButton[0].checked = true;
+}

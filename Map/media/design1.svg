@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="715" height="165" viewBox="0 0 715 165">
+  <g id="Group_2" data-name="Group 2" transform="translate(-230 -458)">
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(775 458)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="170" height="165" rx="14" stroke="none"/>
+      <rect x="0.5" y="0.5" width="169" height="164" rx="13.5" fill="none"/>
+    </g>
+    <text id="Monday" transform="translate(806 480)" fill="#ff000f" font-size="30" font-family="SegoeUI, Segoe UI"><tspan x="0" y="32">Monday</tspan></text>
+    <text id="_30" data-name="30" transform="translate(823 510)" fill="#707070" font-size="70" font-family="SegoeUI, Segoe UI"><tspan x="0" y="76">30</tspan></text>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(230 458)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="410" height="165" rx="14" stroke="none"/>
+      <rect x="0.5" y="0.5" width="409" height="164" rx="13.5" fill="none"/>
+    </g>
+    <text id="_-4" data-name="-4" transform="translate(506 473)" fill="#707070" font-size="70" font-family="SegoeUI, Segoe UI"><tspan x="0" y="76">-4</tspan></text>
+    <text id="_C" data-name="°C" transform="translate(536 567)" fill="#707070" font-size="30" font-family="SegoeUI, Segoe UI"><tspan x="0" y="32">°C</tspan></text>
+    <text id="_0" data-name="0" transform="translate(287 549)" fill="#707070" font-size="70" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">0</tspan></text>
+    <text id="KM_h" data-name="KM/h" transform="translate(273 567)" fill="#707070" font-size="30" font-family="SegoeUI, Segoe UI"><tspan x="0" y="32">KM/h</tspan></text>
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(428 479)" fill="#aaa" stroke="#707070" stroke-width="1">
+      <rect width="7" height="132" stroke="none"/>
+      <rect x="0.5" y="0.5" width="6" height="131" fill="none"/>
+    </g>
+  </g>
+</svg>
