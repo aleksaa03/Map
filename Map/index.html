@@ -51,13 +51,11 @@
         background: #aaa;
       }
       .details2 {
-        position: absolute;
+        position: fixed;
         z-index: 2;
         height: 50px;
         width: 225px;
-        top: 95%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
         border-radius: 5px;
         padding: 5px;
         background: #ffffff;
@@ -72,8 +70,16 @@
         top: 135px;
         right: 0;
         margin: 10px 10px 0 0;
-        color: #707070;
+        color: #ffffff;
         cursor: pointer;
+      }
+      #settings:hover {
+        animation: rotate 5s linear infinite;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotateZ(-360deg);
+        }
       }
       .settings {
         height: 100%;

@@ -1,5 +1,6 @@
 navigator.geolocation.getCurrentPosition(user, error);
 var date = new Date();
+var settingsCog = document.getElementById("settings");
 
 function user(position) {
   var lat = position.coords.latitude;
@@ -206,8 +207,10 @@ radioButton[0].checked = true;
 function settings(setting) {
   if (setting == "open") {
     settingsDiv.style.display = "block";
+    settingsCog.style.animation = "rotate 5s linear infinite";
   } else {
     settingsDiv.style.display = "none";
+    settingsCog.style.animation = "";
   }
 }
 
