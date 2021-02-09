@@ -205,7 +205,7 @@ var connect = document.getElementById("connect");
 radioButton[0].checked = true;
 
 function settings(setting) {
-  if (setting == "open") {
+  if (setting) {
     settingsDiv.style.display = "block";
     settingsCog.style.animation = "rotate 5s linear infinite";
   } else {

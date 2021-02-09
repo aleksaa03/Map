@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="style.css" />
     <title>Map</title>
     <style>
+      * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
       .date h6,
       .date-connect h6 {
         margin: 1px 0;
@@ -30,12 +33,10 @@
       .details2 h1 {
         font-weight: 500;
       }
-      .details1 {
+      .details1,
+      .details2 {
         position: absolute;
-        z-index: 2;
-        height: 50px;
-        width: 150px;
-        left: 10px;
+        z-index: 1;
         bottom: 10px;
         border-radius: 5px;
         padding: 5px;
@@ -45,24 +46,21 @@
         justify-content: space-around;
         align-items: center;
       }
+      .details1 {
+        height: 50px;
+        width: 150px;
+        left: 10px;
+      }
       .vr {
         height: 50px;
         width: 1px;
         background: #aaa;
       }
       .details2 {
-        position: fixed;
-        z-index: 2;
         height: 50px;
         width: 225px;
-        bottom: 0;
-        border-radius: 5px;
-        padding: 5px;
-        background: #ffffff;
-        text-align: center;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        left: 50%;
+        transform: translate(-50%, 0);
       }
       #settings {
         font-size: 29px;
@@ -128,7 +126,7 @@
   <body>
     <div class="settings" id="settingsDiv">
       <div class="setting">
-        <i class="fas fa-times" onclick="settings('close')"></i>
+        <i class="fas fa-times" onclick="settings(false)"></i>
         <div class="split">
           <span>Splited</span>
           <input type="radio" name="radio" id="" class="radio" />
@@ -173,7 +171,7 @@
         <h1 class="day"></h1>
       </div>
     </div>
-    <i class="fas fa-cog" id="settings" onclick="settings('open')"></i>
+    <i class="fas fa-cog" id="settings" onclick="settings(true)"></i>
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <script src="app.js"></script>
